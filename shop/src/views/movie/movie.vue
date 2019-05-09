@@ -1,5 +1,5 @@
 <template>
-  <div>这是分类</div>
+  <div>这是影院</div>
 </template>
 
 <script>
