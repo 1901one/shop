@@ -21,6 +21,7 @@ export default {
         { path: '/car', name: '购物车', icon: 'shopping-cart-o' },
         { path: '/user', name: '我的', icon: 'user-o' },
       ],
+      active:0
     }
   },
 }
