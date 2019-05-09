@@ -16,11 +16,20 @@ export default new Router({
       name: 'home',
       component: () => import('./views/Home/Home.vue')
     },
-
     {
       path: '/movie',
       name: 'movie',
       component: () => import('./views/movie/movie.vue')
+    },
+    {
+      path: '/movie/cinema/:id',
+      name: 'cinema',
+      component: () => import('./views/moviefilm/CinemaPage.vue')
+    },
+    {
+      path: '/movie/:id',
+      name: 'moviefilm',
+      component: () => import('./views/moviefilm/index.vue')
     },
     {
       path: '/user',
