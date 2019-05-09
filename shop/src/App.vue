@@ -1,29 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">首页</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <van-tabbar v-model="active"
+                active-color="red">
+      <van-tabbar-item :icon='item.icon'
+                       :to='item.path'
+                       v-for="(item,index) in list"
+                       :key="index">{{item.name}}</van-tabbar-item>
+    </van-tabbar>
+    <router-view />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+export default {
+  data () {
+    return {
+      list: [
+        { path: '/home', name: '首页', icon: 'wap-home' },
+        { path: '/category', name: '分类', icon: 'coupon-o' },
+        { path: '/car', name: '购物车', icon: 'shopping-cart-o' },
+        { path: '/user', name: '我的', icon: 'user-o' },
+      ],
     }
-  }
+  },
 }
+</script>
+
+<style lang="scss">
 </style>
