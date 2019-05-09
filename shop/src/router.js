@@ -21,6 +21,19 @@ export default new Router({
       path: '/movie',
       name: 'movie',
       component: () => import('./views/movie/movie.vue')
+<<<<<<< HEAD
+=======
+    },
+    {
+      path: '/movie/cinema/:id',
+      name: 'cinema',
+      component: () => import('./views/moviefilm/CinemaPage.vue')
+    },
+    {
+      path: '/movie/:id',
+      name: 'moviefilm',
+      component: () => import('./views/moviefilm/index.vue')
+>>>>>>> gu
     },
     {
       path: '/user',
