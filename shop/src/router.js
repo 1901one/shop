@@ -16,15 +16,11 @@ export default new Router({
       name: 'home',
       component: () => import('./views/Home/Home.vue')
     },
+
     {
-      path: '/category',
-      name: 'category',
-      component: () => import('./views/Category/category.vue')
-    },
-    {
-      path: '/car',
-      name: 'car',
-      component: () => import('./views/Car/car.vue')
+      path: '/movie',
+      name: 'movie',
+      component: () => import('./views/movie/movie.vue')
     },
     {
       path: '/user',

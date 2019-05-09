@@ -17,10 +17,10 @@ export default {
     return {
       list: [
         { path: '/home', name: '首页', icon: 'wap-home' },
-        { path: '/category', name: '分类', icon: 'coupon-o' },
-        { path: '/car', name: '购物车', icon: 'shopping-cart-o' },
+        { path: '/movie', name: '影院', icon: 'coupon-o' },
         { path: '/user', name: '我的', icon: 'user-o' },
       ],
+      active: 0
     }
   },
 }
