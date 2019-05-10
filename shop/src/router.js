@@ -16,20 +16,31 @@ export default new Router({
       name: 'home',
       component: () => import('./views/Home/Home.vue')
     },
+
     {
-      path: '/category',
-      name: 'category',
-      component: () => import('./views/Category/category.vue')
-    },
-    {
-      path: '/car',
-      name: 'car',
-      component: () => import('./views/Car/car.vue')
+      path: '/movie',
+      name: 'movie',
+      component: () => import('./views/movie/movie.vue')
     },
     {
       path: '/user',
       name: 'user',
       component: () => import('./views/user/user.vue')
+    },
+    {
+      path: '/positioning',
+      name: 'positioning',
+      component: () => import('./components/pages/Home/positioning.vue')
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: () => import('./components/pages/Home/search.vue')
+    },
+    {
+      path: '/ticke',
+      name: 'ticke',
+      component: () => import('./components/pages/Home/ticke.vue')
     }
   ]
 })
