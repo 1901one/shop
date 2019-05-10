@@ -9,9 +9,9 @@
           infinite-scroll-disabled="loading"
           infinite-scroll-distance="10">
         <li class="ll"
-            v-for="(item,index) in dingying"
+            v-for="(item,index) in list"
             :key="index">
-          <router-link to="/ticke">
+          <router-link :to='"/movie/"+item.id'>
             <div class="box2">
               <div class="avatar">
                 <img :src="item.img | replaceWH('100.100')" />
@@ -20,9 +20,15 @@
                 <div class="column">
                   <div class="title ">{{item.nm}}</div>
                   <div class="detail">
-                    <div class="no-score">{{item.sc}}<button class="btn">
-                        <router-link to="/ticke">购票</router-link>
+                    <div class="no-score"
+                         v-if='item.sc'>{{item.sc}}<button class="btn">
+                        购票
                       </button> </div>
+                    <div class="no-score1"
+                         v-else>{{item.sc}}<button class="btn1">
+                        预售
+                      </button> </div>
+
                     <div class="actor">主演：{{item.star}}</div>
                     <div class="show-info">{{item.showInfo}}</div>
                   </div>
@@ -30,6 +36,7 @@
               </div>
             </div>
           </router-link>
+          <<router-view />
         </li>
       </ul>
     </div>
@@ -49,7 +56,7 @@ export default {
   data () {
     return {
       loading: false,
-      dingying: []
+      list: []
     }
   },
 
@@ -57,81 +64,92 @@ export default {
     loadMore () {
       this.loading = true;
       //				setTimeout(() => {
-      this.$axios.get("http://localhost:3000/films").then((res) => {
-        this.dingying = this.dingying.concat(res.data);
+      let url = "/my/ajax/movieOnInfoList?token=" + new Date().getTime()
+      this.$axios.get(url).then((res) => {
+        console.log(res)
+        this.list = res.movieList;
         this.loading = false;
       });
-      //				}, 1000);
-      // 图片转换
-      Vue.filter('replaceWH', (val, wh) => {
-        return val.replace('w.h', wh);
-      })
     }
   }
 }
 </script>
 
 <style lang="scss" scoped="scoped">
+$sc: 25;
 #head {
   display: block;
   width: 100%;
   background: brown;
-  height: 50px;
+  height: 50 / $sc + rem;
 }
 h1 {
   color: white;
   overflow: hidden;
-  font-size: 20px;
+  font-size: 20 / $sc + rem;
   font-weight: 400;
   text-align: center;
-  line-height: 50px;
+  line-height: 50 / $sc + rem;
 }
 
 /*.box2{
-	height:500px;
+	height:500/$sc+rem;
 }*/
 ul {
-  height: 500px;
+  height: 500 / $sc + rem;
   overflow-y: auto;
 }
 .ll {
-  height: 130px;
-  padding-bottom: 20px;
+  height: 130 / $sc + rem;
+  padding-bottom: 20 / $sc + rem;
 }
 
 .avatar {
-  margin-top: 1px;
-  margin-left: 22px;
+  margin-top: 1 / $sc + rem;
+  margin-left: 22 / $sc + rem;
 }
 .content-wrapper {
-  margin-top: -102px;
-  margin-left: 110px;
+  margin-top: -102 / $sc + rem;
+  margin-left: 110 / $sc + rem;
   color: grey;
 }
 .column {
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1 / $sc + rem solid #e6e6e6;
 }
 .title {
-  font-size: 16px;
+  font-size: 16 / $sc + rem;
 }
 .title,
 .no-score,
 .actor,
 .show-info {
-  padding-bottom: 6px;
+  padding-bottom: 6 / $sc + rem;
+}
+.actor {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .sctor {
   overflow: hidden;
 }
-button {
+.btn {
   float: right;
-  height: 30px;
-  border-radius: 4px;
+  height: 30 / $sc + rem;
+  border-radius: 4 / $sc + rem;
   background: red;
   border: none;
-  margin-right: 6px;
+  margin-right: 6 / $sc + rem;
 }
-.btn {
+.btn1 {
+  float: right;
+  height: 30 / $sc + rem;
+  border-radius: 4 / $sc + rem;
+  background: blue;
+  border: none;
+  margin-right: 6 / $sc + rem;
+}
+button {
   color: white;
 }
 </style>
