@@ -80,7 +80,7 @@ $sc: 25;
 #head {
   display: block;
   width: 100%;
-  background: brown;
+  background: red;
   height: 50 / $sc + rem;
 }
 h1 {
