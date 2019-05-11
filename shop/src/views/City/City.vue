@@ -10,7 +10,7 @@
             <div class="city-title">
               <h2 v-if="index===0 || index!==0 && item.zm!==city[index-1].zm">{{item.zm}}</h2>
             </div>
-            <router-link to='/movie'>
+            <router-link to='/home'>
               <div class="city">
                 <span>{{item.name}}</span>
               </div>

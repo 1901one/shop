@@ -15,18 +15,17 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: () => import('./views/Home/Home.vue'),
+      redirect: { name: 'nowPlaying' },
       children: [
         {
           path: 'nowPlaying',
+          name: 'nowPlaying',
           component: () => import('./views/Home/nowPlaying.vue')
         },
         {
           path: 'comingSoon',
+          name: 'comingSoon',
           component: () => import('./views/Home/comingSoon.vue')
-        },
-        {
-          path: '',
-          redirect: 'nowPlaying'
         }
       ]
     },

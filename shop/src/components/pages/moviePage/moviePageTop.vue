@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h4>{{list.nm}}</h4>
+    <h4>
+      {{list.nm}}
+    </h4>
     <div class="wrapper"
          ref="wrapper">
       <div class="content">
@@ -23,7 +25,7 @@
                         v-else>{{list.bingeWatch}}人想看</span>
                 </div>
                 <div class="score">{{list.cat}}</div>
-                <div class="score">{{list.oriLang}}/{{list.dur}}</div>
+                <div class="score">{{list.oriLang}}/{{list.dur}}分钟</div>
                 <div class="score">{{list.pubDesc}}</div>
               </div>
             </div>
@@ -45,6 +47,7 @@ export default {
       list: []
     }
   },
+ 
   created () {
     var id = this.$route.params.id
     let url = '/my/ajax/detailmovie?movieId=' + id

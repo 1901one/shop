@@ -7,7 +7,7 @@
           <div class="swiper-slide"
                v-for="(item,index) in list1"
                :key="index">
-            <router-link to="/flims"
+            <router-link :to='"/movie/cinema/"+item.id'
                          tag="div">
               <img :src="item.img | replaceWH('90.115')"
                    alt=""
@@ -25,7 +25,7 @@
            :key="index">
         <p class="group-date"
            v-if="index===0 || index!==0 && item.comingTitle !== list2[index-1].comingTitle">{{item.comingTitle}}</p>
-        <router-link to="/flims"
+        <router-link :to='"/movie/"+item.id'
                      tag="div">
           <div class="films">
             <div class="left">
@@ -55,10 +55,6 @@
 import Vue from 'vue'
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.css"
-
-
-
-
 export default {
   created () {
     let url1 = '/my/ajax/mostExpected?ci=387&limit=10&offset=0&token=' + new Date().getTime()
@@ -71,9 +67,6 @@ export default {
       console.log(res.coming)
       this.list2 = res.coming
     });
-    Vue.filter('replaceWH', (val, wh) => {
-      return val.replace('w.h', wh)
-    })
   },
   watch: {
     list1 () {
@@ -131,6 +124,8 @@ $sc: 25;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-top: -5 / $sc + rem;
+    margin-bottom: -8 / $sc + rem;
   }
   .ct {
     font-size: 10 / $sc + rem;
