@@ -1,19 +1,18 @@
 <template>
   <div>
     这是首页
-    <Upcoming/>
+    <Upcoming />
   </div>
 </template>
 
 <script>
 import Upcoming from "./Upcoming"
 export default {
-    components:{
-      Upcoming
-    }
+  components: {
+    Upcoming
+  }
 }
 </script>
 
 <style>
-    
 </style>

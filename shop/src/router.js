@@ -26,11 +26,6 @@ export default new Router({
       path: '/user',
       name: 'user',
       component: () => import('./views/user/user.vue')
-    },
-    {
-      path: '/flims',
-      name: 'flims',
-      component: () => import('./views/Home/flims.vue')
     }
   ]
 })
