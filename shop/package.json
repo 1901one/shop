@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
+    "swiper": "^4.5.0",
     "vant": "^1.6.17",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",

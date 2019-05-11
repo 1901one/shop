@@ -6,11 +6,11 @@ module.exports = {
 module.exports = {
   devServer: {
     proxy: {
-      '/shop': {
-        target: 'http://test.happymmall.com',
+      '/my': {
+        target: 'http://m.maoyan.com/',
         changeOrigin: true,
         pathRewrite: {
-          '^/shop': ''
+          '^/my': ' '
         }
       }
     }
