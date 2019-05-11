@@ -10,7 +10,11 @@ module.exports = {
         target: 'http://m.maoyan.com/',
         changeOrigin: true,
         pathRewrite: {
+<<<<<<< HEAD
           '^/my': ''
+=======
+          '^/my': ' '
+>>>>>>> zjy
         }
       }
     }
