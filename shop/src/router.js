@@ -14,9 +14,22 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: () => import('./views/Home/Home.vue')
+      component: () => import('./views/Home/Home.vue'),
+      children: [
+        {
+          path: 'nowPlaying',
+          component: () => import('./views/Home/nowPlaying.vue')
+        },
+        {
+          path: 'comingSoon',
+          component: () => import('./views/Home/comingSoon.vue')
+        },
+        {
+          path: '',
+          redirect: 'nowPlaying'
+        }
+      ]
     },
-
     {
       path: '/movie',
       name: 'movie',
