@@ -4,7 +4,6 @@
       <p class="tit">近期最受期待</p>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-
           <div class="swiper-slide"
                v-for="(item,index) in list1"
                :key="index">
@@ -17,7 +16,6 @@
               <span class="ct">{{item.comingTitle}}</span>
             </router-link>
           </div>
-
         </div>
       </div>
     </div>
@@ -45,7 +43,6 @@
                 <router-link to="/dl"><button class="btn"
                           v-bind:class="{'btnys':item.showst===4}">想看</button></router-link>
               </div>
-
             </div>
           </div>
         </router-link>
