@@ -47,12 +47,30 @@ export default new Router({
     {
       path: '/user',
       name: 'user',
-      component: () => import('./views/user/user.vue')
+      component: () => import('./views/user/user.vue'),
+      redirect: { name: 'meituan' },
+      children: [
+        {
+          path: 'meituan',
+          name: 'meituan',
+          component: () => import('./components/pages/user/meituan.vue')
+        },
+        {
+          path: 'shouji',
+          name: 'shouji',
+          component: () => import('./components/pages/user/shouji.vue')
+        }
+      ]
     },
     {
       path: '/city',
       name: 'city',
       component: () => import('./views/City/City.vue')
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: () => import('./views/search/search.vue')
     }
   ]
 })

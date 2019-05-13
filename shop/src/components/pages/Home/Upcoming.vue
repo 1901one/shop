@@ -40,14 +40,15 @@
                   <p class="star">主演：{{item.star}}</p>
                   <span class="rt">{{item.rt}}上映</span>
                 </div>
-                <router-link to="/dl"><button class="btn"
-                          v-bind:class="{'btnys':item.showst===4}">想看</button></router-link>
+                <button class="btn"
+                        v-bind:class="{'btnys':item.showst===4}">想看</button>
               </div>
             </div>
           </div>
         </router-link>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -55,6 +56,7 @@
 import Vue from 'vue'
 import Swiper from "swiper";
 import "swiper/dist/css/swiper.css"
+import Footer from '../../common/Footer'
 export default {
   created () {
     let url1 = '/my/ajax/mostExpected?ci=387&limit=10&offset=0&token=' + new Date().getTime()
@@ -86,6 +88,9 @@ export default {
   },
   methods: {
 
+  },
+  components: {
+    Footer
   }
 }
 </script>

@@ -24,7 +24,6 @@
                          v-else>{{item.sc}}<button class="btn1">
                         预售
                       </button> </div>
-
                     <div class="actor">主演：{{item.star}}</div>
                     <div class="show-info">{{item.showInfo}}</div>
                   </div>
@@ -36,18 +35,20 @@
         </li>
       </ul>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 // import Nav from '@/components/pages/Home/nav.vue'
 // import axios from 'axios'
+import Footer from '@/components/common/Footer'
 import Vue from 'vue'
 
 export default {
   components: {
     // Nav,
-
+    Footer
   },
   data () {
     return {
