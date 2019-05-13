@@ -93,7 +93,7 @@ h1 {
 	height:500/$sc+rem;
 }*/
 ul {
-  height: 500 / $sc + rem;
+  height: 523 / $sc + rem;
   overflow-y: auto;
 }
 .ll {
